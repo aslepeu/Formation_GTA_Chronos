@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formation GTA Chronos – APF France handicap</title>
+  <meta name="description" content="Formation GTA Chronos – Pilotes & Planificateurs – APF France handicap – 5 et 6 mai 2026, Paris 13e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       VARIABLES – Charte APF France handicap
+    ============================================= */
+    :root {
+      --bleu:      #00536A;
+      --bleu-clair:#0F9ED5;
+      --or:        #F5A623;
+      --creme:     #F7F2E8;
+      --creme2:    #EEE7D8;
+      --texte:     #1D1D1B;
+      --blanc:     #FFFFFF;
+      --gris:      #6B7280;
+      --rayon:     8px;
+      --ombre:     0 4px 24px rgba(0,83,106,.12);
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 400;
+      color: var(--texte);
+      background: var(--blanc);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--bleu); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--or);
+      outline-offset: 3px;
+    }
+
+    /* =============================================
+       NAVIGATION ANCHOR
+    ============================================= */
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      background: var(--bleu);
+      color: #fff;
+      padding: .5rem 1rem;
+      z-index: 999;
+      font-weight: 700;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* =============================================
+       TOPBAR NAVIGATION
+    ============================================= */
+    .topnav {
+      background: var(--bleu);
+      padding: .6rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.5rem;
+    }
+    .topnav a {
+      color: rgba(255,255,255,.85);
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .topnav a:hover { color: var(--or); text-decoration: none; }
+
+    /* =============================================
+       HEADER HERO
+    ============================================= */
+    header {
+      background: var(--creme);
+      position: relative;
+      overflow: hidden;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    /* Decorative vertical bar – brand element */
+    .header-inner::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: var(--or);
+    }
+    .header-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .header-badge {
+      display: inline-block;
+      background: var(--or);
+      color: var(--blanc);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem .85rem;
+      border-radius: 2rem;
+      width: fit-content;
+    }
+    .header-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--bleu);
+      line-height: 1.15;
+    }
+    .header-title span { color: var(--or); }
+    .header-subtitle {
+      font-size: 1.15rem;
+      color: var(--gris);
+      font-weight: 400;
+      max-width: 540px;
+    }
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: .5rem;
+    }
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      background: var(--blanc);
+      border: 1.5px solid var(--creme2);
+      border-radius: 2rem;
+      padding: .35rem .9rem;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--bleu);
+      white-space: nowrap;
+    }
+    .meta-chip svg { flex-shrink: 0; }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header-logo img {
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+    /* Fallback logo placeholder */
+    .logo-placeholder {
+      width: 180px;
+      height: 100px;
+      background: var(--blanc);
+      border: 2px dashed var(--creme2);
+      border-radius: var(--rayon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      color: var(--gris);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* =============================================
+       CTA BUTTONS (header area)
+    ============================================= */
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.2rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1.5rem;
+      border-radius: var(--rayon);
+      font-family: 'Nunito', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s, background .2s;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--bleu);
+      color: var(--blanc);
+    }
+    .btn-primary:hover {
+      background: #003f52;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,83,106,.3);
+      text-decoration: none;
+      color: var(--blanc);
+    }
+    .btn-outline {
+      background: transparent;
+      border-color: var(--bleu);
+      color: var(--bleu);
+    }
+    .btn-outline:hover {
+      background: var(--bleu);
+      color: var(--blanc);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .btn-gold {
+      background: var(--or);
+      color: var(--blanc);
+    }
+    .btn-gold:hover {
+      background: #d48e0f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245,166,35,.35);
+      text-decoration: none;
+      color: var(--blanc);
+    }
+
+    /* =============================================
+       SECTION WRAPPERS
+    ============================================= */
+    .section {
+      padding: 4.5rem 2rem;
+    }
+    .section-alt { background: var(--creme); }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: .5rem;
+    }
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--bleu);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .section-intro {
+      color: var(--gris);
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* =============================================
+       PUBLIC & PRÉREQUIS – cards
+    ============================================= */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .info-card {
+      background: var(--blanc);
+      border-radius: var(--rayon);
+      padding: 1.8rem;
+      box-shadow: var(--ombre);
+      border-top: 4px solid var(--bleu);
+    }
+    .info-card.gold { border-top-color: var(--or); }
+    .info-card h3 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.15rem;
+      color: var(--bleu);
+      margin-bottom: .9rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .info-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .info-card li {
+      padding-left: 1.4rem;
+      position: relative;
+      font-size: .97rem;
+      color: var(--texte);
+    }
+    .info-card li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--or);
+      font-size: .85rem;
+    }
+
+    /* =============================================
+       OBJECTIFS – badges grid
+    ============================================= */
+    .objectifs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .objectif-item {
+      background: var(--blanc);
+      border-radius: var(--rayon);
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+      box-shadow: 0 2px 12px rgba(0,83,106,.08);
+      transition: transform .2s;
+    }
+    .objectif-item:hover { transform: translateY(-3px); }
+    .objectif-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--bleu);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanc);
+      font-size: 1rem;
+    }
+    .objectif-item p {
+      font-size: .95rem;
+      line-height: 1.45;
+      color: var(--texte);
+    }
+
+    /* =============================================
+       ACCORDÉON PROGRAMME
+    ============================================= */
+    .accordion { display: flex; flex-direction: column; gap: .6rem; }
+    .acc-item {
+      border: 1.5px solid var(--creme2);
+      border-radius: var(--rayon);
+      overflow: hidden;
+      background: var(--blanc);
+    }
+    .acc-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bleu);
+      text-align: left;
+      transition: background .2s;
+      gap: 1rem;
+    }
+    .acc-btn:hover { background: var(--creme); }
+    .acc-btn[aria-expanded="true"] { background: var(--bleu); color: var(--blanc); }
+    .acc-btn[aria-expanded="true"] .acc-arrow { transform: rotate(180deg); color: var(--or); }
+    .acc-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      background: var(--or);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--blanc);
+    }
+    .acc-btn[aria-expanded="true"] .acc-num { background: var(--or); }
+    .acc-label { flex: 1; }
+    .acc-arrow {
+      flex-shrink: 0;
+      transition: transform .3s;
+      font-size: 1rem;
+    }
+    .acc-body {
+      display: none;
+      padding: 1.2rem 1.4rem 1.4rem;
+      border-top: 1.5px solid var(--creme2);
+    }
+    .acc-body.open { display: block; animation: fadeDown .25s ease; }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+    .acc-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+    .acc-body li {
+      padding-left: 1.3rem;
+      position: relative;
+      font-size: .96rem;
+      color: var(--texte);
+    }
+    .acc-body li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--or);
+      font-weight: 700;
+    }
+
+    /* =============================================
+       VIDÉO
+    ============================================= */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--ombre);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .video-caption {
+      margin-top: 1rem;
+      font-size: .9rem;
+      color: var(--gris);
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* =============================================
+       DISPOSITIF PÉDAGOGIQUE
+    ============================================= */
+    .pedag-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+    .pedag-card {
+      background: var(--blanc);
+      border-radius: var(--rayon);
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,83,106,.08);
+      border-bottom: 3px solid var(--bleu);
+      transition: transform .2s;
+    }
+    .pedag-card:hover { transform: translateY(-3px); }
+    .pedag-icon { font-size: 2rem; margin-bottom: .6rem; }
+    .pedag-card h3 { font-size: .97rem; font-weight: 700; color: var(--bleu); line-height: 1.3; }
+
+    /* =============================================
+       TÉLÉCHARGEMENTS
+    ============================================= */
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .download-card {
+      background: var(--blanc);
+      border-radius: var(--rayon);
+      padding: 1.6rem;
+      box-shadow: var(--ombre);
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      transition: transform .2s;
+    }
+    .download-card:hover { transform: translateY(-2px); }
+    .dl-icon {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      background: var(--bleu);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanc);
+      font-size: 1.5rem;
+    }
+    .dl-info h3 { font-size: 1rem; font-weight: 700; color: var(--texte); }
+    .dl-info p { font-size: .85rem; color: var(--gris); margin-top: .2rem; }
+    .dl-info a {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      margin-top: .6rem;
+      background: var(--bleu);
+      color: var(--blanc);
+      padding: .4rem .9rem;
+      border-radius: 4px;
+      font-size: .85rem;
+      font-weight: 700;
+      transition: background .2s;
+    }
+    .dl-info a:hover { background: #003f52; text-decoration: none; }
+
+    /* =============================================
+       CARTE & INFOS PRATIQUES
+    ============================================= */
+    .map-section-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 2rem;
+      align-items: start;
+    }
+    .map-embed {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--ombre);
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 380px;
+      border: 0;
+      display: block;
+    }
+    .infos-pratiques {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .info-ligne {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .info-picto {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--bleu);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanc);
+      font-size: 1.1rem;
+    }
+    .info-text strong { display: block; font-weight: 700; color: var(--bleu); font-size: .95rem; }
+    .info-text span { font-size: .93rem; color: var(--texte); }
+    .qualiopi-badge {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      background: var(--creme);
+      border: 1.5px solid var(--creme2);
+      border-radius: var(--rayon);
+      padding: .9rem 1.2rem;
+      margin-top: .5rem;
+    }
+    .qualiopi-badge span { font-size: .9rem; line-height: 1.4; color: var(--texte); }
+    .qualiopi-badge strong { color: var(--bleu); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--bleu);
+      color: rgba(255,255,255,.85);
+      padding: 3rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    footer h4 {
+      color: var(--or);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+    }
+    footer p, footer a {
+      font-size: .92rem;
+      color: rgba(255,255,255,.85);
+      line-height: 1.7;
+    }
+    footer a:hover { color: var(--or); text-decoration: none; }
+    .footer-contact p { display: flex; align-items: center; gap: .5rem; margin-bottom: .35rem; }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .82rem;
+      color: rgba(255,255,255,.5);
+    }
+    .footer-bottom a { color: rgba(255,255,255,.7); }
+    .footer-bottom a:hover { color: var(--or); }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 900px) {
+      .header-inner { grid-template-columns: 1fr; }
+      .header-logo { display: none; }
+      .info-grid { grid-template-columns: 1fr; }
+      .map-section-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 3rem 1.2rem; }
+      .topnav { gap: .8rem; }
+      .topnav a { font-size: .75rem; }
+    }
+
+    /* =============================================
+       VISUEL THÉMATIQUE BANNER
+    ============================================= */
+    .theme-banner {
+      background: linear-gradient(135deg, var(--bleu) 0%, #0F9ED5 60%, #00536A 100%);
+      padding: 3.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .theme-banner::before {
+      content: '';
+      position: absolute;
+      right: -80px; top: -80px;
+      width: 350px; height: 350px;
+      background: rgba(245,166,35,.12);
+      border-radius: 50%;
+    }
+    .theme-banner::after {
+      content: '';
+      position: absolute;
+      left: -50px; bottom: -100px;
+      width: 280px; height: 280px;
+      background: rgba(255,255,255,.06);
+      border-radius: 50%;
+    }
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--blanc);
+    }
+    .banner-inner h2 {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: .7rem;
+    }
+    .banner-inner p {
+      font-size: 1.05rem;
+      opacity: .85;
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
+    }
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Nunito', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--or);
+      line-height: 1;
+    }
+    .stat-label { font-size: .85rem; opacity: .8; margin-top: .3rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Lien d'évitement accessibilité -->
+  <a class="skip-link" href="#programme">Aller au contenu principal</a>
+
+  <!-- Navigation rapide -->
+  <nav class="topnav" aria-label="Navigation rapide">
+    <a href="#public">Public</a>
+    <a href="#programme">Programme</a>
+    <a href="#formateur">Formateur</a>
+    <a href="#lieu">Lieu</a>
+    <a href="#telechargements">Documents</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- =============================================
+       HEADER HERO
+  ============================================= -->
+  <header role="banner">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="header-badge">Formation professionnelle · Qualiopi</span>
+        <h1 class="header-title">
+          Formation <span>GTA Chronos</span><br />
+          Pilotes &amp; Planificateurs
+        </h1>
+        <p class="header-subtitle">
+          Maîtrisez le logiciel GTA Chronos de bout en bout : planification, gestion des absences, pointages et restitutions. Une formation opérationnelle, ancrée dans vos réalités métier.
+        </p>
+
+        <div class="header-meta" aria-label="Informations clés">
+          <span class="meta-chip">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            5 &amp; 6 mai 2026
+          </span>
+          <span class="meta-chip">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2 jours · 14 heures
+          </span>
+          <span class="meta-chip">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Paris 13<sup>e</sup> – Siège APF
+          </span>
+          <span class="meta-chip">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            Présentiel · Classe à distance
+          </span>
+        </div>
+
+        <div class="cta-group">
+          <a class="btn btn-primary" href="#programme">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            Voir le programme
+          </a>
+          <a class="btn btn-gold" href="programme.pdf" download>
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Télécharger le PDF
+          </a>
+          <a class="btn btn-outline" href="#contact">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Contacter le formateur
+          </a>
+        </div>
+      </div>
+
+      <div class="header-logo" aria-label="Logo APF France handicap">
+        <!-- logo.png doit être placé à la racine du dépôt GitHub -->
+        <img src="logo.png" alt="Logo APF France handicap" width="180" height="100"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="logo-placeholder" style="display:none;">logo.png<br />(à déposer sur GitHub)</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============================================
+       STATS BANNER
+  ============================================= -->
+  <div class="theme-banner" role="region" aria-label="Chiffres clés de la formation">
+    <div class="banner-inner">
+      <h2>Une formation 100 % opérationnelle</h2>
+      <p>Conçue pour une mise en application immédiate dans les organisations utilisant GTA Chronos comme outil central de gestion des temps et des activités.</p>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-num">14h</div>
+          <div class="stat-label">de formation</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">11</div>
+          <div class="stat-label">modules</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">pratique &amp; cas métier</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">✓</div>
+          <div class="stat-label">Conforme Qualiopi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       PUBLIC & PRÉREQUIS
+  ============================================= -->
+  <section class="section" id="public" aria-labelledby="public-title">
+    <div class="container">
+      <p class="section-label">À qui s'adresse cette formation ?</p>
+      <h2 class="section-title" id="public-title">Public cible &amp; prérequis</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#00536A" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            Public visé
+          </h3>
+          <ul>
+            <li>Chefs de projet SI</li>
+            <li>Responsables planification</li>
+            <li>Gestionnaires RH</li>
+            <li>Managers opérationnels</li>
+            <li>Pilotes GTA et planificateurs</li>
+            <li>Toute personne amenée à administrer ou exploiter GTA Chronos</li>
+          </ul>
+        </div>
+        <div class="info-card gold">
+          <h3>
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#F5A623" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Prérequis
+          </h3>
+          <ul>
+            <li>Connaissances de base en organisation du temps de travail</li>
+            <li>Maîtrise des règles de gestion des temps</li>
+            <li>Une première sensibilisation aux enjeux RH est recommandée</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       OBJECTIFS
+  ============================================= -->
+  <section class="section section-alt" aria-labelledby="obj-title">
+    <div class="container">
+      <p class="section-label">Compétences acquises</p>
+      <h2 class="section-title" id="obj-title">Objectifs de la formation</h2>
+      <p class="section-intro">À l'issue de la formation, les participants seront capables de :</p>
+      <div class="objectifs-grid">
+        <div class="objectif-item">
+          <div class="objectif-icon" aria-hidden="true">🖥️</div>
+          <p>Naviguer avec aisance dans l'interface Chronos</p>
+        </div>
+        <div class="objectif-item">
+          <div class="objectif-icon" aria-hidden="true">👥</div>
+          <p>Gérer les ressources et les populations de travail</p>
+        </div>
+        <div class="objectif-item">
+          <div class="objectif-icon" aria-hidden="true">📅</div>
+          <p>Créer et affecter des horaires et rotations</p>
+        </div>
+        <div class="objectif-item">
+          <div class="objectif-icon" aria-hidden="true">📋</div>
+          <p>Planifier et maintenir des plannings fiables</p>
+        </div>
+        <div class="objectif-item">
+          <div class="objectif-icon" aria-hidden="true">✅</div>
+          <p>Saisir, valider et contrôler absences et pointages</p>
+        </div>
+        <div class="objectif-item">
+          <div class="objectif-icon" aria-hidden="true">📊</div>
+          <p>Exploiter le Chronoboard comme outil de pilotage</p>
+        </div>
+        <div class="objectif-item">
+          <div class="objectif-icon" aria-hidden="true">🤝</div>
+          <p>Accompagner les utilisateurs dans le Self-Service</p>
+        </div>
+        <div class="objectif-item">
+          <div class="objectif-icon" aria-hidden="true">📈</div>
+          <p>Produire des restitutions et rapports exploitables</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PROGRAMME – ACCORDÉON
+  ============================================= -->
+  <section class="section" id="programme" aria-labelledby="prog-title">
+    <div class="container">
+      <p class="section-label">Contenu détaillé</p>
+      <h2 class="section-title" id="prog-title">Programme de la formation</h2>
+      <p class="section-intro">
+        La formation débute dès l'inscription par la mise à disposition du support <em>Pilotes Chronos V10</em>. Elle alterne démonstrations, apports méthodologiques et mises en pratique sur environnement Chronos Test.
+      </p>
+
+      <div class="accordion" role="list">
+
+        <!-- Module 1 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="true" aria-controls="mod1">
+            <span class="acc-num" aria-hidden="true">1</span>
+            <span class="acc-label">Introduction</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body open" id="mod1" role="region">
+            <ul>
+              <li>Présentation des participants et du formateur</li>
+              <li>Objectifs et périmètre de la formation</li>
+              <li>Organisation des 2 journées</li>
+              <li>Présentation de l'environnement de formation Chronos</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod2">
+            <span class="acc-num" aria-hidden="true">2</span>
+            <span class="acc-label">Présentation générale de Chronos</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod2" role="region" hidden>
+            <ul>
+              <li>Principes généraux de la GTA avec Chronos</li>
+              <li>Accès à l'application et gestion des profils utilisateurs</li>
+              <li>Découverte du Chronoboard et de ses indicateurs</li>
+              <li>Navigation et logique fonctionnelle de l'outil</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod3">
+            <span class="acc-num" aria-hidden="true">3</span>
+            <span class="acc-label">Ergonomie et prise en main avancée</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod3" role="region" hidden>
+            <ul>
+              <li>Lecture d'un écran type Chronos</li>
+              <li>Boutons d'actions et menus contextuels</li>
+              <li>Multi-transactions et multi-fenêtrage</li>
+              <li>Options d'affichage et filtres</li>
+              <li>Aides à la saisie et raccourcis clavier</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod4">
+            <span class="acc-num" aria-hidden="true">4</span>
+            <span class="acc-label">Gestion des ressources et des populations</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod4" role="region" hidden>
+            <ul>
+              <li>Structure et lecture de la fiche ressource</li>
+              <li>Création, consultation et mise à jour des ressources</li>
+              <li>Gestion des ressources multi-contrats</li>
+              <li>Notion de population de travail</li>
+              <li>Sélection, filtrage et utilisation des populations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod5">
+            <span class="acc-num" aria-hidden="true">5</span>
+            <span class="acc-label">Planification des horaires et rotations</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod5" role="region" hidden>
+            <ul>
+              <li>Typologies d'horaires (fixe, variable, nuit, repos, forfait jour)</li>
+              <li>Création et paramétrage des horaires</li>
+              <li>Gestion des pauses, bornes et tolérances</li>
+              <li>Principes de construction des rotations</li>
+              <li>Création et modification d'une rotation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod6">
+            <span class="acc-num" aria-hidden="true">6</span>
+            <span class="acc-label">Planning collectif</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod6" role="region" hidden>
+            <ul>
+              <li>Présentation du planning collectif standard</li>
+              <li>Personnalisation de l'affichage (items, colonnes, cumuls, compteurs)</li>
+              <li>Affectation des horaires et rotations</li>
+              <li>Planification périodique et ajustements ponctuels</li>
+              <li>Lecture des alertes et informations de planning</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 7 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod7">
+            <span class="acc-num" aria-hidden="true">7</span>
+            <span class="acc-label">Planning individuel</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod7" role="region" hidden>
+            <ul>
+              <li>Accès et spécificités du planning individuel</li>
+              <li>Lecture multi-périodes (jusqu'à 24 mois)</li>
+              <li>Comparaison planning collectif / individuel</li>
+              <li>Analyse des anomalies et informations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 8 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod8">
+            <span class="acc-num" aria-hidden="true">8</span>
+            <span class="acc-label">Gestion des absences</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod8" role="region" hidden>
+            <ul>
+              <li>Absences en jours, demi-journées et heures</li>
+              <li>Saisie, modification et suppression des absences</li>
+              <li>Niveaux et circuits de validation</li>
+              <li>Suivi des absences dans le planning</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 9 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod9">
+            <span class="acc-num" aria-hidden="true">9</span>
+            <span class="acc-label">Pointages, situations et anomalies</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod9" role="region" hidden>
+            <ul>
+              <li>Principes du réalisé et du pointage</li>
+              <li>Identification des anomalies de pointage</li>
+              <li>Validation et correction des pointages</li>
+              <li>Lecture détaillée des situations journalières</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 10 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod10">
+            <span class="acc-num" aria-hidden="true">10</span>
+            <span class="acc-label">Processus, formulaires et Self-Service</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod10" role="region" hidden>
+            <ul>
+              <li>Présentation des modèles et formulaires Chronos</li>
+              <li>Déclaration et validation des écarts de planification</li>
+              <li>Cas des salariés badgeants et non badgeants</li>
+              <li>Fonctionnalités du Self-Service salarié</li>
+              <li>Accompagnement des utilisateurs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 11 -->
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" aria-controls="mod11">
+            <span class="acc-num" aria-hidden="true">11</span>
+            <span class="acc-label">Restitutions et rapports</span>
+            <span class="acc-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="acc-body" id="mod11" role="region" hidden>
+            <ul>
+              <li>Présentation des rapports standards</li>
+              <li>Paramétrage des critères et populations</li>
+              <li>Extractions et analyse des données Chronos</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /accordion -->
+    </div>
+  </section>
+
+  <!-- =============================================
+       DISPOSITIF PÉDAGOGIQUE
+  ============================================= -->
+  <section class="section section-alt" aria-labelledby="pedag-title">
+    <div class="container">
+      <p class="section-label">Méthodes d'apprentissage</p>
+      <h2 class="section-title" id="pedag-title">Dispositif pédagogique</h2>
+      <div class="pedag-grid">
+        <div class="pedag-card">
+          <div class="pedag-icon" aria-hidden="true">🎓</div>
+          <h3>Apports théoriques<br />&amp; pratiques</h3>
+        </div>
+        <div class="pedag-card">
+          <div class="pedag-icon" aria-hidden="true">🔧</div>
+          <h3>Exercices guidés &amp;<br />études de cas métier</h3>
+        </div>
+        <div class="pedag-card">
+          <div class="pedag-icon" aria-hidden="true">👥</div>
+          <h3>Travaux individuels<br />&amp; collectifs</h3>
+        </div>
+        <div class="pedag-card">
+          <div class="pedag-icon" aria-hidden="true">💬</div>
+          <h3>Échanges &amp;<br />retours d'expérience</h3>
+        </div>
+        <div class="pedag-card">
+          <div class="pedag-icon" aria-hidden="true">💻</div>
+          <h3>Environnement<br />Chronos Test</h3>
+        </div>
+        <div class="pedag-card">
+          <div class="pedag-icon" aria-hidden="true">📖</div>
+          <h3>Support<br />Pilotes Chronos V10</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       MOT DU FORMATEUR – VIDÉO YOUTUBE
+  ============================================= -->
+  <section class="section" id="formateur" aria-labelledby="video-title">
+    <div class="container">
+      <p class="section-label">Votre formatrice</p>
+      <h2 class="section-title" id="video-title">Mot du formateur</h2>
+      <p class="section-intro">
+        Anne-Sophie Lepeu vous présente la formation, ses objectifs et l'approche pédagogique retenue pour cette session GTA Chronos.
+      </p>
+      <div style="max-width: 760px; margin: 0 auto;">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/Eek1ttBgbmI"
+            title="Présentation de la formation GTA Chronos par Anne-Sophie Lepeu"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <p class="video-caption">Anne-Sophie Lepeu – Formatrice GTA Chronos · APF France handicap</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       TÉLÉCHARGEMENTS
+  ============================================= -->
+  <section class="section section-alt" id="telechargements" aria-labelledby="dl-title">
+    <div class="container">
+      <p class="section-label">Ressources</p>
+      <h2 class="section-title" id="dl-title">Documents à télécharger</h2>
+      <p class="section-intro">Retrouvez ci-dessous les documents de référence de la formation.</p>
+      <div class="download-grid">
+
+        <div class="download-card">
+          <div class="dl-icon" aria-hidden="true">📄</div>
+          <div class="dl-info">
+            <h3>Programme de formation</h3>
+            <p>Contenu détaillé, objectifs et modalités pédagogiques</p>
+            <a href="programme.pdf" download aria-label="Télécharger le programme de formation en PDF">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger – programme.pdf
+            </a>
+          </div>
+        </div>
+
+        <div class="download-card">
+          <div class="dl-icon" aria-hidden="true">📗</div>
+          <div class="dl-info">
+            <h3>Livret stagiaire</h3>
+            <p>Informations pratiques, règlement intérieur et ressources</p>
+            <a href="livret-stagiaire.pdf" download aria-label="Télécharger le livret stagiaire en PDF">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger – livret-stagiaire.pdf
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       LIEU & CARTE GOOGLE MAPS
+  ============================================= -->
+  <section class="section" id="lieu" aria-labelledby="lieu-title">
+    <div class="container">
+      <p class="section-label">Informations pratiques</p>
+      <h2 class="section-title" id="lieu-title">Lieu de la formation</h2>
+
+      <div class="map-section-grid">
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.4!2d2.3516!3d48.8308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6716f857e3c63%3A0x4e3c7d4fa4d4a7b!2s17%20Bd%20Auguste%20Blanqui%2C%2075013%20Paris!5e0!3m2!1sfr!2sfr!4v1"
+            title="Carte – Siège APF France handicap, 17 Bd Auguste Blanqui, 75013 Paris"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="infos-pratiques">
+          <div class="info-ligne">
+            <div class="info-picto" aria-hidden="true">📅</div>
+            <div class="info-text">
+              <strong>Dates</strong>
+              <span>Lundi 5 &amp; Mardi 6 mai 2026<br />9h00 – 17h30</span>
+            </div>
+          </div>
+          <div class="info-ligne">
+            <div class="info-picto" aria-hidden="true">📍</div>
+            <div class="info-text">
+              <strong>Adresse</strong>
+              <span>Siège APF France handicap<br />17 Boulevard Auguste Blanqui<br />75013 Paris</span>
+            </div>
+          </div>
+          <div class="info-ligne">
+            <div class="info-picto" aria-hidden="true">🚇</div>
+            <div class="info-text">
+              <strong>Accès transports</strong>
+              <span>Métro ligne 7 – Corvisart ou Place d'Italie<br />Bus 27, 47, 83</span>
+            </div>
+          </div>
+          <div class="info-ligne">
+            <div class="info-picto" aria-hidden="true">♿</div>
+            <div class="info-text">
+              <strong>Accessibilité</strong>
+              <span>Lieu pleinement accessible aux personnes en situation de handicap</span>
+            </div>
+          </div>
+          <div class="qualiopi-badge">
+            <span style="font-size:1.5rem;" aria-hidden="true">🏅</span>
+            <span><strong>Formation Qualiopi</strong><br />Conforme aux exigences du référentiel national qualité</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer role="contentinfo" id="contact">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <h4>APF France handicap</h4>
+        <p>
+          <em>Risquer l'impossible</em><br />
+          Organisme de formation engagé pour l'inclusion et l'accessibilité.
+        </p>
+        <p style="margin-top:.8rem;">
+          <a href="https://nouvelleaquitaine.apf-francehandicap.org/" target="_blank" rel="noopener noreferrer">
+            Politique d'inclusion &amp; référent handicap →
+          </a>
+        </p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Votre formatrice</h4>
+        <p>👩‍💼 Anne-Sophie Lepeu</p>
+        <p>
+          📧 <a href="/cdn-cgi/l/email-protection#f99897979cd48a968991909cd7959c899c8cb998899fd7988a8a96d79f8b">
+            <span class="__cf_email__" data-cfemail="d4b5babab1f9a7bba4bcbdb1fab8b1a4b1a194b5a4b2fab5a7a7bbfab2a6">[email&#160;protected]</span>
+          </a>
+        </p>
+        <p>
+          📞 <a href="tel:+33612345678">06 12 34 56 78</a>
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Formation</h4>
+        <p><a href="#public">Public &amp; prérequis</a></p>
+        <p><a href="#programme">Programme</a></p>
+        <p><a href="#formateur">Vidéo de présentation</a></p>
+        <p><a href="#telechargements">Téléchargements</a></p>
+        <p><a href="#lieu">Lieu &amp; carte</a></p>
+        <p><a href="programme.pdf" download>📄 programme.pdf</a></p>
+        <p><a href="livret-stagiaire.pdf" download>📗 livret-stagiaire.pdf</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 APF France handicap – Tous droits réservés</span>
+      <span>
+        <a href="https://nouvelleaquitaine.apf-francehandicap.org/" target="_blank" rel="noopener noreferrer">
+          Politique handicap &amp; inclusion
+        </a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       JAVASCRIPT – ACCORDÉON
+  ============================================= -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.querySelectorAll('.acc-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        var bodyId = this.getAttribute('aria-controls');
+        var body = document.getElementById(bodyId);
+
+        // Fermer tous les autres
+        document.querySelectorAll('.acc-btn').forEach(function(b) {
+          b.setAttribute('aria-expanded', 'false');
+        });
+        document.querySelectorAll('.acc-body').forEach(function(d) {
+          d.classList.remove('open');
+          d.setAttribute('hidden', '');
+        });
+
+    
